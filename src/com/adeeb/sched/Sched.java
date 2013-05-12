@@ -12,12 +12,14 @@ import android.widget.Toast;
 
 public class Sched extends BroadcastReceiver{
 	public void onReceive(Context context, Intent intent) {
-		Toast.makeText(context, "Msg received", Toast.LENGTH_LONG).show();
+		
 		final AudioManager audio = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
 		final int old_mode = audio.getRingerMode();
 		//choosing the mode depending on the event type
 		Bundle passed_info = intent.getExtras();
-		String event_type = (String) passed_info.get("event_type");
+		String event_type = (String) passed_info.get("type");
+		String event_name = (String) passed_info.get("title");
+		Toast.makeText(context, "Changing ringer mode: "+event_name, Toast.LENGTH_LONG).show();
 		if (event_type.equalsIgnoreCase("lecture")){
 			audio.setRingerMode(AudioManager.RINGER_MODE_SILENT);
 		}
