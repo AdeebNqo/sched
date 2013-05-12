@@ -11,6 +11,11 @@ to be a team effort.
 - screen for deleting `event`
 - Preferences
 
+###Extra
+
+I've opted to use text file instead of sqlite for the database.
+Trying to avoid too much work for nothing.
+
 ##Licence
 This is free and unencumbered software released into the public domain.
 
