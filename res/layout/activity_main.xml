@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/Event_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Event_Name" />
+
+        <EditText
+            android:id="@+id/event_name_textbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="20dp"
+            android:ems="10" >
+        </EditText>
+
+        <TextView
+            android:id="@+id/Event_Time"
+            android:layout_width="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Event_Time" />
+
+        <TimePicker
+            android:id="@+id/timePicker1"
+            android:layout_width="wrap_content"
+			android:layout_marginBottom="20dp"
+            android:layout_height="wrap_content" />
+        
+        <TextView
+            android:id="@+id/Event_Type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Event_Type" />
+                
+                
+        <RadioGroup
+        android:id="@+id/radiogroup_buttons"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/lecture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/Lecture" />
+
+        <RadioButton
+            android:id="@+id/tutorial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Tutorial" />
+
+        <RadioButton
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Other" />
+        
+    </RadioGroup>
+    
+         <Button
+        android:id="@+id/done"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Done" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PurpleSched</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="Event_Name">Event_Name</string>
+    <string name="Lecture">Lecture</string>
+    <string name="Tutorial">Tutorial</string>
+    <string name="Other">Other</string>
+    <string name="Event_Time">Event_Time</string>
+    <string name="Event_Type">Event Type</string>
+    <string name="Done">Done</string>
+
+</resources>
