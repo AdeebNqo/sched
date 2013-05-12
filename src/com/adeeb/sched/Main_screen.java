@@ -50,6 +50,7 @@ public class Main_screen extends Activity {
 	 * 
 	 */
 	public void schedule(){
+		
 		//getting details of event
 		String event_text = entered_text.getText().toString();
 		String event_type;
@@ -81,5 +82,8 @@ public class Main_screen extends Activity {
 		
 		PendingIntent pi = PendingIntent.getBroadcast(getBaseContext(), 0, i, PendingIntent.FLAG_ONE_SHOT);
 		alarm_manager.setRepeating(AlarmManager.ELAPSED_REALTIME, added_time-current_time, AlarmManager.INTERVAL_DAY, pi);
+		
+		//strore the event in a database
+		Event e = new Event(pi, event_text, event_type, time_picker.getCurrentHour()+":"+time_picker.getCurrentMinute());
 	}
 }
