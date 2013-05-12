@@ -1,7 +1,6 @@
 package com.adeeb.sched;
 
 import java.util.Calendar;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlarmManager;
@@ -15,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 public class Main_screen extends Activity {
 
@@ -52,8 +50,22 @@ public class Main_screen extends Activity {
 	 * 
 	 */
 	public void schedule(){
+		//getting details of event
 		String event_text = entered_text.getText().toString();
-				
+		String event_type;
+		switch(type.getCheckedRadioButtonId()){
+		case R.id.tutorial:
+			event_type="tutorial";
+			break;
+		case R.id.lecture:
+			event_type="lecture";
+			break;
+		default:
+			event_type="other";
+			break;
+		}
+		
+		//sorting out the time issues
 		Calendar cal = Calendar.getInstance();
 		long current_time = cal.getTimeInMillis();
 		
@@ -61,7 +73,12 @@ public class Main_screen extends Activity {
 		cal.set(Calendar.MINUTE, time_picker.getCurrentMinute());
 		long added_time = cal.getTimeInMillis();
 		
-		Intent i = new Intent(getBaseContext(),Sched.class);
+		//setting the alarm
+		Intent i = new Intent(getBaseContext(), Sched.class);
+		//putting the event alarm details in the intent
+		i.putExtra("title", event_text);
+		i.putExtra("type", event_type);
+		
 		PendingIntent pi = PendingIntent.getBroadcast(getBaseContext(), 0, i, PendingIntent.FLAG_ONE_SHOT);
 		alarm_manager.setRepeating(AlarmManager.ELAPSED_REALTIME, added_time-current_time, AlarmManager.INTERVAL_DAY, pi);
 	}
